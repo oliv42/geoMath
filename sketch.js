@@ -27,20 +27,22 @@ function draw() {
     fill(0, 0, 0);
     circle(variationTraingleRouge + 200, 600, 10);
     circle(600 - variationTraingleBlue, 600, 10);
-    line(variationTraingleRouge + 200, 600, 600 - variationTraingleBlue, 600, 10);
-    line(variationTraingleRouge + 200, 601, 600 - variationTraingleBlue, 601, 10);
-    line(variationTraingleRouge + 200, 599, 600 - variationTraingleBlue, 599, 10);
+    rect(variationTraingleRouge + 200, 599, variableX, 2);
     textSize(20);
     text(`Variable X = ${Math.floor((variableX * 10) / 400)}`, positionXText, 650);
 
+    //!! Bug ici trait ne se colorie pas
     let dred = dist(mouseX, mouseY, variationTraingleRouge + 200, 600);
     if (dred < 10) {
         // Si la souris est sur le cercle
         fill(255, 0, 0); // Changez la couleur de remplissage du cercle
         circle(variationTraingleRouge + 200, 600, 10);
+        console.log("allo");
+        rect(variationTraingleRouge + 200, 599, variableX, 2);
     } else {
         fill(0, 0, 0); // Réinitialisez la couleur de remplissage du cercle
         circle(variationTraingleRouge + 200, 600, 10);
+        rect(variationTraingleRouge + 200, 599, variableX, 2);
     }
 
     let dGreen = dist(mouseX, mouseY, 600 - variationTraingleBlue, 600);
@@ -48,9 +50,11 @@ function draw() {
         // Si la souris est sur le cercle
         fill(255, 0, 0); // Changez la couleur de remplissage du cercle
         circle(600 - variationTraingleBlue, 600, 10);
+        rect(variationTraingleRouge + 200, 599, variableX, 2);
     } else {
         fill(0, 0, 0); // Réinitialisez la couleur de remplissage du cercle
         circle(600 - variationTraingleBlue, 600, 10);
+        rect(variationTraingleRouge + 200, 599, variableX, 2);
     }
 
     fill(255, 255, 255);
